@@ -1,0 +1,13 @@
+# Running
+# docker-compose build --no-cache --progress=plain
+# docker-compose build --no-cache --progress=plain --build-arg TEST_VAR=bob
+version: '3.8'
+services:
+  app:
+    platform: "linux/amd64"
+    build:
+      context: .
+      args:
+        TEST_VAR:
+    env_file:
+      - .env
